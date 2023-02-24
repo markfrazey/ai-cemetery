@@ -1,5 +1,3 @@
-import logo from './logo.svg';
-import './App.css';
 import Timelne from './Timeline.js';
 import Navbar from './Navbar.js';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
