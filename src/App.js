@@ -17,7 +17,9 @@ const darkTheme = createTheme({
     },
   },
   typography: {
-    fontFamily: '"Merriweather", "Helvetica", "Arial", sans-serif',
+    fontFamily: '"Merriweather", "Montserrat", "Helvetica", "Arial", sans-serif',
+    a: '"Merriweather", "Helvetica", "Arial", sans-serif',
+    body2: '"Montserrat", "Helvetica", "Arial", sans-serif',
   },
 });
 
