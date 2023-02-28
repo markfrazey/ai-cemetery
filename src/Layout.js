@@ -1,12 +1,13 @@
+import { Outlet } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
-import Button from '@mui/material/Button';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
 
-export default function Navbar() {
+export default function Layout() {
   return (
-    <AppBar
+    <>
+      <AppBar
         position="static"
         color="default"
         elevation={0}
@@ -20,7 +21,7 @@ export default function Navbar() {
             <Link
               variant="inherit"
               color="text.primary"
-              href="#"
+              href="/"
               sx={{ my: 1, mx: 1.5 }}
             >
               Home
@@ -28,15 +29,15 @@ export default function Navbar() {
             <Link
               variant="inherit"
               color="text.primary"
-              href="#"
+              href="/cemetery"
               sx={{ my: 1, mx: 1.5 }}
             >
-              Graveyard
+              Cemetery
             </Link>
             <Link
               variant="inherit"
               color="text.primary"
-              href="#"
+              href="/blog"
               sx={{ my: 1, mx: 1.5 }}
             >
               Blog
@@ -44,7 +45,7 @@ export default function Navbar() {
             <Link
               variant="inherit"
               color="text.primary"
-              href="#"
+              href="/about"
               sx={{ my: 1, mx: 1.5 }}
             >
               About
@@ -52,5 +53,7 @@ export default function Navbar() {
           </nav>
         </Toolbar>
       </AppBar>
+      <Outlet />
+    </>
   );
 }
