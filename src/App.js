@@ -1,8 +1,7 @@
-import Timelne from './Timeline.js';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { Route } from "react-router";
-import { BrowserRouter as Router, Link as RouterLink, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Routes } from "react-router-dom";
 import Home from './Home.js';
 import Blog from './Blog.js';
 import Cemetery from './Cemetery.js';
