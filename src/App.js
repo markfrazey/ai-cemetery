@@ -7,6 +7,7 @@ import Blog from './Blog.js';
 import Cemetery from './Cemetery.js';
 import About from './About.js';
 import Layout from './Layout.js';
+import './App.css';
 
 const darkTheme = createTheme({
   palette: {
@@ -14,6 +15,9 @@ const darkTheme = createTheme({
     primary: {
       main: '#6096ba',
     },
+  },
+  typography: {
+    fontFamily: '"Merriweather", "Helvetica", "Arial", sans-serif',
   },
 });
 

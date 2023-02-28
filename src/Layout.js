@@ -3,6 +3,7 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
+import Container from '@mui/material/Container';
 
 export default function Layout() {
   return (
@@ -21,6 +22,7 @@ export default function Layout() {
             <Link
               component={RouterLink}
               variant="inherit"
+              underline="hover"
               color="text.primary"
               to="/"
               sx={{ my: 1, mx: 1.5 }}
@@ -30,6 +32,7 @@ export default function Layout() {
             <Link
               component={RouterLink}
               variant="inherit"
+              underline="hover"
               color="text.primary"
               to="/cemetery"
               sx={{ my: 1, mx: 1.5 }}
@@ -39,6 +42,7 @@ export default function Layout() {
             <Link
               component={RouterLink}
               variant="inherit"
+              underline="hover"
               color="text.primary"
               to="/blog"
               sx={{ my: 1, mx: 1.5 }}
@@ -48,6 +52,7 @@ export default function Layout() {
             <Link
               component={RouterLink}
               variant="inherit"
+              underline="hover"
               color="text.primary"
               to="/about"
               sx={{ my: 1, mx: 1.5 }}
@@ -57,7 +62,9 @@ export default function Layout() {
           </nav>
         </Toolbar>
       </AppBar>
-      <Outlet />
+      <Container>
+        <Outlet />
+      </Container>
     </>
   );
 }
