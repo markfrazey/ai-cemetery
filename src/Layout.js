@@ -4,6 +4,8 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
 import Container from '@mui/material/Container';
+import SvgIcon from '@mui/material/SvgIcon';
+import { ReactComponent as CemeteryLogo } from './logo.svg';
 
 export default function Layout() {
   return (
@@ -15,6 +17,9 @@ export default function Layout() {
         sx={{ borderBottom: (theme) => `1px solid ${theme.palette.divider}` }}
       >
         <Toolbar>
+          <SvgIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}>
+            <CemeteryLogo />
+          </SvgIcon>
           <Typography variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
             Chatbot Cemetery
           </Typography>
