@@ -1,8 +1,45 @@
 [
   {
-    "name": "Chatbot name",
-    "creator": "Creator of chatbot",
-    "start_date": "Start date",
-    "end_date": "End date"
+    "name": "Tay",
+    "creator": "Microsoft",
+    "start_date": "3/23/2016",
+    "end_date": "3/24/2016",
+    "description": "Started scraping harmful and negative (namely anti-Semitic, racist, and sexist) content. Trolls fed the bot offensive and harmful content which the bot learned and got out of control. Was reactivated later on, but started spamming the Twitter timeline.",
+    "tags": [
+      "Racism",
+      "Sexism",
+      "Anti-semitism"
+    ],
+    "links": [
+      "https://en.wikipedia.org/wiki/Tay_(bot)",
+      "https://web.archive.org/web/20171001033850/http://www.access-ai.com/news/4108/really-need-take-accountability-microsoft-ceo-tay-chatbot/",
+      "https://web.archive.org/web/20190725004127/https://www.zdnet.com/article/microsoft-and-the-learnings-from-its-failed-tay-artificial-intelligence-bot/"
+    ]
+  },
+  {
+    "name": "Lee Luda",
+    "creator": "ScatterLab",
+    "start_date": "12/23/2020",
+    "end_date": "1/11/2021",
+    "description": "!! NEEDS UPDATING !!",
+    "tags": [
+      "Privacy",
+      "Racism",
+      "Ableism",
+      "Anti-LGBT"
+    ],
+    "links": [
+      "https://medium.com/carre4/ai-chatbot-lee-luda-and-data-ethics-1e523290c816",
+      "https://thediplomat.com/2021/01/chatbot-gone-awry-starts-conversations-about-ai-ethics-in-south-korea/"
+    ]
+  },
+  {
+    "name": "",
+    "creator": "",
+    "start_date": "",
+    "end_date": "",
+    "description": "",
+    "tags": [],
+    "links": []
   }
 ]
