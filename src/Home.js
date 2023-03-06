@@ -9,70 +9,68 @@ import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 import { Card, CardContent, Chip } from '@mui/material';
 import { Typography } from '@mui/material';
 import { Stack } from '@mui/system';
+import timelineData from './data.json';
+
+function TimelineCard(props) {
+  return (
+    <Card>
+      <CardContent>
+        <Typography sx={{ fontSize: 14 }} color="text.secondary">{props.data.start_date} - {props.data.end_date}</Typography>
+        <Typography variant="h5" component="div">{props.data.name}</Typography>
+        <Typography color="text.secondary">{props.data.creator}</Typography>
+        <Stack direction="row" spacing={1}>
+          {props.data.tags.map((tag) => <Chip label={tag} />)}
+        </Stack>
+        <Typography sx={{ fontSize: 14 }}  variant="body2">{props.data.description}</Typography>
+      </CardContent>
+    </Card>
+  );
+}
 
 export default function Home() {
   return (
     <>
       <h1>Home</h1>
       <Timeline position="left">
-      <TimelineItem>
-      <TimelineOppositeContent>
-          <Card>
-            <CardContent>
-              <Typography sx={{ fontSize: 14 }} color="text.secondary">
-                March 23, 2016 - March 24, 2016
-              </Typography>
-              <Typography variant="h5" component="div">
-                Tay
-              </Typography>
-              <Typography color="text.secondary">
-                Microsoft
-              </Typography>
-              <Stack direction="row" spacing={1}>
-                <Chip label="Racism" />
-                <Chip label="Sexism" />
-                <Chip label="Anti-semitism" />
-              </Stack>
-
-              <Typography sx={{ fontSize: 14 }}  variant="body2">
-                Started scraping harmful and negative (namely anti-Semitic, racist, and sexist) content. Trolls fed the bot offensive and harmful content which the bot learned and got out of control.
-                Was reactivated later on, but started spamming the Twitter timeline.
-              </Typography>
-            </CardContent>
-          </Card>
-        </TimelineOppositeContent>
+        <TimelineItem>
+          <TimelineOppositeContent>
+            <TimelineCard data={timelineData[0]} />
+          </TimelineOppositeContent>
+          <TimelineSeparator><TimelineDot /><TimelineConnector sx={{height:240}} /></TimelineSeparator>
+          <TimelineContent color="text.secondary">2016</TimelineContent>
+        </TimelineItem>
+        <TimelineItem>
+          <TimelineOppositeContent>
+            <TimelineCard data={timelineData[1]} />
+          </TimelineOppositeContent>
+          <TimelineSeparator><TimelineDot /><TimelineConnector sx={{height:240}} /></TimelineSeparator>
+          <TimelineContent color="text.secondary">2017</TimelineContent>
+        </TimelineItem>
+        <TimelineItem>
         <TimelineSeparator><TimelineDot /><TimelineConnector sx={{height:240}} /></TimelineSeparator>
-        <TimelineContent color="text.secondary">2016</TimelineContent>
-      </TimelineItem>
-      <TimelineItem>
-        <TimelineSeparator><TimelineDot /><TimelineConnector sx={{height:240}} /></TimelineSeparator>
-        <TimelineContent color="text.secondary">2017</TimelineContent>
-      </TimelineItem>
-      <TimelineItem>
-      <TimelineSeparator><TimelineDot /><TimelineConnector sx={{height:240}} /></TimelineSeparator>
-        <TimelineContent color="text.secondary">2018</TimelineContent>
-      </TimelineItem>
-      <TimelineItem>
-        <TimelineSeparator><TimelineDot /><TimelineConnector sx={{height:240}} /></TimelineSeparator>
-        <TimelineContent color="text.secondary">2019</TimelineContent>
-      </TimelineItem>
-      <TimelineItem>
-        <TimelineSeparator><TimelineDot /><TimelineConnector sx={{height:240}} /></TimelineSeparator>
-        <TimelineContent color="text.secondary">2020</TimelineContent>
-      </TimelineItem>
-      <TimelineItem>
-        <TimelineSeparator><TimelineDot /><TimelineConnector sx={{height:240}} /></TimelineSeparator>
-        <TimelineContent color="text.secondary">2021</TimelineContent>
-      </TimelineItem>
-      <TimelineItem>
-        <TimelineSeparator><TimelineDot /><TimelineConnector sx={{height:240}} /></TimelineSeparator>
-        <TimelineContent color="text.secondary">2022</TimelineContent>
-      </TimelineItem>
-      <TimelineItem>
-        <TimelineSeparator><TimelineDot /><TimelineConnector sx={{height:240}} /></TimelineSeparator>
-        <TimelineContent color="text.secondary">2023</TimelineContent>
-      </TimelineItem>
-    </Timeline>
+          <TimelineContent color="text.secondary">2018</TimelineContent>
+        </TimelineItem>
+        <TimelineItem>
+          <TimelineSeparator><TimelineDot /><TimelineConnector sx={{height:240}} /></TimelineSeparator>
+          <TimelineContent color="text.secondary">2019</TimelineContent>
+        </TimelineItem>
+        <TimelineItem>
+          <TimelineSeparator><TimelineDot /><TimelineConnector sx={{height:240}} /></TimelineSeparator>
+          <TimelineContent color="text.secondary">2020</TimelineContent>
+        </TimelineItem>
+        <TimelineItem>
+          <TimelineSeparator><TimelineDot /><TimelineConnector sx={{height:240}} /></TimelineSeparator>
+          <TimelineContent color="text.secondary">2021</TimelineContent>
+        </TimelineItem>
+        <TimelineItem>
+          <TimelineSeparator><TimelineDot /><TimelineConnector sx={{height:240}} /></TimelineSeparator>
+          <TimelineContent color="text.secondary">2022</TimelineContent>
+        </TimelineItem>
+        <TimelineItem>
+          <TimelineSeparator><TimelineDot /><TimelineConnector sx={{height:240}} /></TimelineSeparator>
+          <TimelineContent color="text.secondary">2023</TimelineContent>
+        </TimelineItem>
+      </Timeline>
     </>
   );
 }
