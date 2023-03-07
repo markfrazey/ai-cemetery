@@ -6,26 +6,8 @@ import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
-import { Card, CardContent, Chip } from '@mui/material';
-import { Typography } from '@mui/material';
-import { Stack } from '@mui/system';
 import timelineData from './data.json';
-
-function TimelineCard(props) {
-  return (
-    <Card>
-      <CardContent>
-        <Typography sx={{ fontSize: 14 }} color="text.secondary">{props.data.start_date} - {props.data.end_date}</Typography>
-        <Typography variant="h5" component="div">{props.data.name}</Typography>
-        <Typography color="text.secondary">{props.data.creator}</Typography>
-        <Stack direction="row" spacing={1}>
-          {props.data.tags.map((tag) => <Chip label={tag} />)}
-        </Stack>
-        <Typography sx={{ fontSize: 14 }}  variant="body2">{props.data.description}</Typography>
-      </CardContent>
-    </Card>
-  );
-}
+import ChatbotCard from './ChatbotCard';
 
 export default function Home() {
   return (
@@ -34,14 +16,14 @@ export default function Home() {
       <Timeline position="left">
         <TimelineItem>
           <TimelineOppositeContent>
-            <TimelineCard data={timelineData[0]} />
+            <ChatbotCard data={timelineData[0]} />
           </TimelineOppositeContent>
           <TimelineSeparator><TimelineDot /><TimelineConnector sx={{height:240}} /></TimelineSeparator>
           <TimelineContent color="text.secondary">2016</TimelineContent>
         </TimelineItem>
         <TimelineItem>
           <TimelineOppositeContent>
-            <TimelineCard data={timelineData[1]} />
+            <ChatbotCard data={timelineData[1]} />
           </TimelineOppositeContent>
           <TimelineSeparator><TimelineDot /><TimelineConnector sx={{height:240}} /></TimelineSeparator>
           <TimelineContent color="text.secondary">2017</TimelineContent>

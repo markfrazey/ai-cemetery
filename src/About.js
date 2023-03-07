@@ -1,7 +1,7 @@
 import markImage from './img/Mark.jpg';
 import nilaImage from './img/Nila.jpg';
 import minsuhImage from './img/Minsuh.jpg';
-import brandonImage from './img/Brandon.jpg';
+import brandonImage from './img/Brandon.jpeg';
 
 export default function About() {
 
@@ -12,11 +12,11 @@ export default function About() {
     },
     {
       name: 'Nila Ragu',
-      image: nilaImage    
+      image: nilaImage
     },
     {
       name: 'Minsuh Kim',
-      image: minsuhImage    
+      image: minsuhImage
     },
     {
       name: 'Brandon Mendoza',

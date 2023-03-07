@@ -1,4 +1,4 @@
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/Unstable_Grid2';
 import { Card, CardContent, Chip } from '@mui/material';
 import Box from '@mui/material/Box';
 import { Typography } from '@mui/material';
@@ -8,6 +8,7 @@ import { Stack } from '@mui/system';
 export default function Cemetery() {
   return (
     <Box sx={{ width: '100%' }}>
+      <h1>Cemetery</h1>
       <Grid container rowSpacing={3} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
         <Grid item xs={6}>
         <Card>

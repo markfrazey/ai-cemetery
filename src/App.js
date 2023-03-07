@@ -34,6 +34,7 @@ function App() {
             <Route path="blog" element={<Blog />} />
             <Route path="cemetery" element={<Cemetery />} />
             <Route path="about" element={<About />} />
+
           </Route>
         </Routes>
       </ThemeProvider>
