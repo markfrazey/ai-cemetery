@@ -72,16 +72,6 @@ export default function Layout() {
             >
               About
             </Link>
-            <Link
-              component={RouterLink}
-              variant="inherit"
-              underline="hover"
-              color="text.primary"
-              to="/news"
-              sx={{ my: 1, mx: 1.5 }}
-            >
-              News
-            </Link>
           </nav>
         </Toolbar>
       </AppBar>
