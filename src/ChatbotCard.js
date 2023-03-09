@@ -29,7 +29,7 @@ export default function ChatbotCard(props) {
           <CardContent>
             <Typography sx={{ fontSize: 14 }} color="text.secondary">{props.data.start_date} - {props.data.end_date}</Typography>
             <Typography variant="h5" component="div">{props.data.name}</Typography>
-            <Typography color="text.secondary">{props.data.creator}</Typography>
+            <Typography color="text.secondary" marginBottom={1}>{props.data.creator}</Typography>
             <Stack direction="row" spacing={1}>
               {props.data.tags.split(", ").map((tag) => <Chip label={tag} />)}
             </Stack>

@@ -32,7 +32,7 @@ export default function ChatbotPage(props) {
             <Skeleton width="60%" />
           </div>
         ) : (
-          <Stack direction="row" spacing={1}>
+          <Stack direction="row" spacing={1} my={1}>
             {props.chatbotData[urlParams.id].tags.split(", ").map((tag) => <Chip label={tag} key={tag}/>)}
           </Stack>
         )}
@@ -65,7 +65,7 @@ export default function ChatbotPage(props) {
           </div>
         ) : (
           <ul>
-            {props.chatbotData[urlParams.id].links.split(", ").map((link) => <li><Link href={link} key={link} target="_blank" rel="noopener">{link}</Link></li>)}
+            {props.chatbotData[urlParams.id].links.split(", ").map((link) => <li key={link}><Link href={link} target="_blank" rel="noopener">{link}</Link></li>)}
           </ul>
         )}
 

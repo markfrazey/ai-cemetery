@@ -8,8 +8,7 @@ import TimelineDot from '@mui/lab/TimelineDot';
 import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 import Fade from '@mui/material/Fade';
 import PageHeader from './PageHeader';
-import Grid from '@mui/material/Unstable_Grid2';
-import ChatbotCard, { ChatbotCardLoading } from './ChatbotCard';
+import ChatbotCard from './ChatbotCard';
 import { useNavigate } from 'react-router-dom';
 import Slide from '@mui/material/Slide';
 
@@ -42,7 +41,7 @@ export default function Home(props) {
             {props.isLoaded && years.map(currYear =>
               <TimelineItem key={currYear}>
                 <TimelineOppositeContent maxWidth={580}>
-                {Object.values(props.chatbotData).filter(currChatbotData => new Date(currChatbotData.start_date).getUTCFullYear() == currYear).map(currChatbotData =>
+                {Object.values(props.chatbotData).filter(currChatbotData => new Date(currChatbotData.start_date).getUTCFullYear() === currYear).map(currChatbotData =>
                   <ChatbotCard data={currChatbotData} handleClick={handleTransition}></ChatbotCard>)
                 }
                 </TimelineOppositeContent>
