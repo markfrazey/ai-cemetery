@@ -18,7 +18,7 @@ export default function Blog() {
       Finally, the About page provides context for the project and introduces the team members who worked on it. This page sheds light on the scope of the project and its goals, as well as the people who dedicated their time and effort to make the project a reality. It adds a personal touch to the website and helps users connect with the creators behind the project.
       </p>
       <p>
-      Overall, the Chatbot Cemetery website serves as a valuable resource for anyone interested in the history and development of chatbots. It provides insight into the reasons behind their shutdowns and helps users gain a better understanding of the issues that arise when working with AI technology. The website is well-organized and user-friendly, making it easy for users to navigate and explore the content.
+      Overall, the Chatbot Cemetery website serves as a valuable resource for anyone interested in the history and development of chatbots. It provides insight into the reasons behind their shutdowns and helps users gain a better understanding of the issues that arise when working with AI technology.
       </p>
       </>
   );
