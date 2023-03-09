@@ -7,6 +7,7 @@ import Home from './Home.js';
 import Blog from './Blog.js';
 import Cemetery from './Cemetery.js';
 import About from './About.js';
+import News from './News.js';
 import Layout from './Layout.js';
 import ChatbotPage from './ChatbotPage.js';
 import './App.css';
@@ -52,6 +53,7 @@ function App() {
             <Route index element={<Home />} />
             <Route path="blog" element={<Blog />} />
             <Route path="cemetery" element={<Cemetery chatbotData={chatbotData} isLoaded={isLoaded} />} />
+            <Route path="News" element={<News chatbotDate={chatbotData} isLoaded={isLoaded} />} />
             <Route path="about" element={<About />} />
             <Route path="chatbots/:id" element={<ChatbotPage chatbotData={chatbotData} isLoaded={isLoaded} />} />
           </Route>
