@@ -11,11 +11,15 @@ import PageHeader from './PageHeader';
 import Grid from '@mui/material/Unstable_Grid2';
 import ChatbotCard, { ChatbotCardLoading } from './ChatbotCard';
 import { useNavigate } from 'react-router-dom';
+import Slide from '@mui/material/Slide';
+
 
 export default function Home(props) {
   const navigate = useNavigate();
   const [slideOut, setSlideOut] = React.useState(true);
   const [navPath, setNavPath] = React.useState("");
+
+  const years = [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023];
 
   const handleNavigate = () => {
     navigate(navPath);
@@ -28,53 +32,27 @@ export default function Home(props) {
   return (
     <>
       <PageHeader text="Home" in={true}/>
-      <Fade in={true}  mountOnEnter unmountOnExit>
-        <Timeline sx={{
-          [`& .${timelineContentClasses.root}`]: {
-            flex: 0.1,
-          },
-        }} position="left">
-          <TimelineItem>
-            <TimelineOppositeContent>
-            {props.isLoaded && Object.values(props.chatbotData).map(currChatbotData =>
-                <ChatbotCard data={currChatbotData} handleClick={handleTransition}></ChatbotCard>)
-            }
-            </TimelineOppositeContent>
-            <TimelineSeparator><TimelineDot /><TimelineConnector sx={{height:240}} /></TimelineSeparator>
-            <TimelineContent color="text.secondary">2016</TimelineContent>
-          </TimelineItem>
-          <TimelineItem>
-            <TimelineOppositeContent>
-            </TimelineOppositeContent>
-            <TimelineSeparator><TimelineDot /><TimelineConnector sx={{height:240}} /></TimelineSeparator>
-            <TimelineContent color="text.secondary">2017</TimelineContent>
-          </TimelineItem>
-          <TimelineItem>
-          <TimelineSeparator><TimelineDot /><TimelineConnector sx={{height:240}} /></TimelineSeparator>
-            <TimelineContent color="text.secondary">2018</TimelineContent>
-          </TimelineItem>
-          <TimelineItem>
-            <TimelineSeparator><TimelineDot /><TimelineConnector sx={{height:240}} /></TimelineSeparator>
-            <TimelineContent color="text.secondary">2019</TimelineContent>
-          </TimelineItem>
-          <TimelineItem>
-            <TimelineSeparator><TimelineDot /><TimelineConnector sx={{height:240}} /></TimelineSeparator>
-            <TimelineContent color="text.secondary">2020</TimelineContent>
-          </TimelineItem>
-          <TimelineItem>
-            <TimelineSeparator><TimelineDot /><TimelineConnector sx={{height:240}} /></TimelineSeparator>
-            <TimelineContent color="text.secondary">2021</TimelineContent>
-          </TimelineItem>
-          <TimelineItem>
-            <TimelineSeparator><TimelineDot /><TimelineConnector sx={{height:240}} /></TimelineSeparator>
-            <TimelineContent color="text.secondary">2022</TimelineContent>
-          </TimelineItem>
-          <TimelineItem>
-            <TimelineSeparator><TimelineDot /><TimelineConnector sx={{height:240}} /></TimelineSeparator>
-            <TimelineContent color="text.secondary">2023</TimelineContent>
-          </TimelineItem>
-        </Timeline>
-      </Fade>
+      <Slide in={slideOut} appear={false} onExited={handleNavigate} direction="right" mountOnEnter unmountOnExit>
+        <Fade in={props.isLoaded}  mountOnEnter unmountOnExit>
+          <Timeline sx={{
+            [`& .${timelineContentClasses.root}`]: {
+              flex: 0.25,
+            },
+          }} position="left">
+            {props.isLoaded && years.map(currYear =>
+              <TimelineItem key={currYear}>
+                <TimelineOppositeContent maxWidth={580}>
+                {Object.values(props.chatbotData).filter(currChatbotData => new Date(currChatbotData.start_date).getUTCFullYear() == currYear).map(currChatbotData =>
+                  <ChatbotCard data={currChatbotData} handleClick={handleTransition}></ChatbotCard>)
+                }
+                </TimelineOppositeContent>
+                <TimelineSeparator><TimelineDot /><TimelineConnector sx={{height:240}} /></TimelineSeparator>
+                <TimelineContent color="text.secondary">{currYear}</TimelineContent>
+              </TimelineItem>
+            )}
+          </Timeline>
+        </Fade>
+        </Slide>
     </>
   );
 }

@@ -1,11 +1,8 @@
 import Fade from '@mui/material/Fade';
 import * as React from 'react';
 import { useParams } from 'react-router-dom';
-import { Stack, Typography, Chip, Skeleton, IconButton, Link } from '@mui/material';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { Stack, Typography, Chip, Skeleton, Link } from '@mui/material';
 
-
-/* <IconButton variant="text" aria-label="back"><ArrowBackIcon fontSize="large" /></IconButton> */
 export default function ChatbotPage(props) {
   const urlParams = useParams();
 

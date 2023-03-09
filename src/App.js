@@ -57,7 +57,7 @@ function App() {
             <Route index element={<Home chatbotData={chatbotData} isLoaded={isLoaded} />} />
             <Route path="blog" element={<Blog />} />
             <Route path="cemetery" element={<Cemetery chatbotData={chatbotData} isLoaded={isLoaded} />} />
-            <Route path="News" element={<News chatbotDate={chatbotData} isLoaded={isLoaded} />} />
+            <Route path="News" element={<News chatbotData={chatbotData} isLoaded={isLoaded} />} />
             <Route path="about" element={<About />} />
             <Route path="chatbots/:id" element={<ChatbotPage chatbotData={chatbotData} isLoaded={isLoaded} />} />
           </Route>
