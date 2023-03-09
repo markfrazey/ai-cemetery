@@ -31,7 +31,7 @@ export default function ChatbotCard(props) {
             <Typography variant="h5" component="div">{props.data.name}</Typography>
             <Typography color="text.secondary" marginBottom={1}>{props.data.creator}</Typography>
             <Stack direction="row" spacing={1}>
-              {props.data.tags.split(", ").map((tag) => <Chip label={tag} />)}
+              {props.data.tags.split(", ").map((tag) => <Chip label={tag} key={tag} />)}
             </Stack>
           </CardContent>
         </CardActionArea>

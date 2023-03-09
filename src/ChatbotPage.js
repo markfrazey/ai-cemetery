@@ -17,6 +17,14 @@ export default function ChatbotPage(props) {
           )}
         </Typography>
 
+        <Typography variant="h5" color="text.secondary">
+          {!props.isLoaded ? (
+            <Skeleton width={160} />
+          ) : (
+            props.chatbotData[urlParams.id].creator
+          )}
+        </Typography>
+
         <Typography color="text.secondary">
           {!props.isLoaded ? (
             <Skeleton width={120} />

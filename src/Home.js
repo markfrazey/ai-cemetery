@@ -30,7 +30,7 @@ export default function Home(props) {
   };
   return (
     <>
-      <PageHeader text="Home" in={true}/>
+      <PageHeader text="Home" in={slideOut}/>
       <Slide in={slideOut} appear={false} onExited={handleNavigate} direction="right" mountOnEnter unmountOnExit>
         <Fade in={props.isLoaded}  mountOnEnter unmountOnExit>
           <Timeline sx={{
@@ -42,7 +42,7 @@ export default function Home(props) {
               <TimelineItem key={currYear}>
                 <TimelineOppositeContent maxWidth={580}>
                 {Object.values(props.chatbotData).filter(currChatbotData => new Date(currChatbotData.start_date).getUTCFullYear() === currYear).map(currChatbotData =>
-                  <ChatbotCard data={currChatbotData} handleClick={handleTransition}></ChatbotCard>)
+                  <ChatbotCard key={currChatbotData.id} data={currChatbotData} handleClick={handleTransition}></ChatbotCard>)
                 }
                 </TimelineOppositeContent>
                 <TimelineSeparator><TimelineDot /><TimelineConnector sx={{height:240}} /></TimelineSeparator>

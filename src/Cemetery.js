@@ -16,6 +16,7 @@ export default function Cemetery(props) {
   const [slideOut, setSlideOut] = React.useState(true);
   const [navPath, setNavPath] = React.useState("");
 
+  /* TODO: Add a functioning system
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -25,6 +26,7 @@ export default function Cemetery(props) {
   const handleClose = () => {
     setAnchorEl(null);
   };
+  */
 
   const handleNavigate = () => {
     navigate(navPath);
@@ -37,7 +39,6 @@ export default function Cemetery(props) {
 
   return (
     <Box sx={{ width: '100%' }}>
-
       <Stack
         direction="row"
         justifyContent="space-between"
@@ -46,19 +47,16 @@ export default function Cemetery(props) {
       >
         <PageHeader text="Cemetery" in={slideOut} />
         <Tooltip title="Filter">
-          <IconButton onClick={handleClick} aria-label="Filter" >
+          <IconButton aria-label="Filter" >
             <FilterListIcon fontSize="large" />
           </IconButton>
         </Tooltip>
-
       </Stack>
 
-
-
       <Slide in={slideOut} appear={false} onExited={handleNavigate} direction="right" mountOnEnter unmountOnExit>
-        <Fade in={true}  mountOnEnter unmountOnExit>
+        <Fade in={true} mountOnEnter unmountOnExit>
           <Grid container spacing={3}>
-            {!props.isLoaded && Array(9).keys.map((num) => <Grid xs={4} key={num}><ChatbotCardLoading /></Grid>)}
+            {!props.isLoaded && Array.from(Array(9)).map((n, index) => <Grid xs={4} key={index}><ChatbotCardLoading /></Grid>)}
             {props.isLoaded && Object.values(props.chatbotData).sort((a, b) => new Date(a.start_date) - new Date(b.start_date)).map(currChatbotData =>
               <Grid xs={4} key={currChatbotData.id}>
                 <ChatbotCard data={currChatbotData} handleClick={handleTransition}></ChatbotCard>
