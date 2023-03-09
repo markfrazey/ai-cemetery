@@ -3,7 +3,7 @@ import Fade from '@mui/material/Fade';
 export default function Blog() {
   return (
     <Fade in={true}  mountOnEnter unmountOnExit>
-      <>
+      <div>
         <h1>Blog</h1>
         <p>
           From all that we have done, our intended impact of the project is for people to improve from the past errors in AI to understand and eliminate biased results and prevent any further issues with AI models. However, what we at least expect for the actual impact is to give people a more thorough understanding of why several of the models have failed and become more aware of this ongoing issue. Even with our expectations on the purpose of this project are promising, it will not fully achieve the full intended impact that we hoped for since biased data originally comes from personal opinions and judgments of different people, meaning that handling every single type of bias will be very difficult to analysis one at a time. Either way, it is impossible to get rid of bias entirely, but we believe that this knowledge will make people more aware of the potential issues when working with AI. If all goes well, the status of the project will expand upon this in the future with information on current AIs in progress for users to analyze.
@@ -23,7 +23,7 @@ export default function Blog() {
         <p>
         Overall, the Chatbot Cemetery website serves as a valuable resource for anyone interested in the history and development of chatbots. It provides insight into the reasons behind their shutdowns and helps users gain a better understanding of the issues that arise when working with AI technology.
         </p>
-      </>
+      </div>
     </Fade>
   );
 }

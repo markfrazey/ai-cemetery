@@ -58,7 +58,7 @@ export default function Cemetery(props) {
       <Slide in={slideOut} appear={false} onExited={handleNavigate} direction="right" mountOnEnter unmountOnExit>
         <Fade in={true}  mountOnEnter unmountOnExit>
           <Grid container spacing={3}>
-            {!props.isLoaded && Array(9).fill(<Grid xs={4}><ChatbotCardLoading /></Grid>)}
+            {!props.isLoaded && Array(9).keys.map((num) => <Grid xs={4} key={num}><ChatbotCardLoading /></Grid>)}
             {props.isLoaded && Object.values(props.chatbotData).sort((a, b) => new Date(a.start_date) - new Date(b.start_date)).map(currChatbotData =>
               <Grid xs={4} key={currChatbotData.id}>
                 <ChatbotCard data={currChatbotData} handleClick={handleTransition}></ChatbotCard>

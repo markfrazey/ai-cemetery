@@ -24,7 +24,7 @@ export default function ChatbotCard(props) {
 
   return (
     // <Slide direction="up" in={checked} mountOnEnter unmountOnExit>
-      <Card>
+      <Card key={props.data.id}>
         <CardActionArea onClick={(handleClick)} sx={{ height: 160 }}>
           <CardContent>
             <Typography sx={{ fontSize: 14 }} color="text.secondary">{props.data.start_date} - {props.data.end_date}</Typography>

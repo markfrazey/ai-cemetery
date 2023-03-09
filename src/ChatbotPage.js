@@ -1,7 +1,7 @@
 import Fade from '@mui/material/Fade';
 import * as React from 'react';
 import { useParams } from 'react-router-dom';
-import { Stack, Typography, Chip, Skeleton, IconButton } from '@mui/material';
+import { Stack, Typography, Chip, Skeleton, IconButton, Link } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 
@@ -16,11 +16,7 @@ export default function ChatbotPage(props) {
           {!props.isLoaded ? (
             <Skeleton width={120} />
           ) : (
-            <>
-
-
-              {props.chatbotData[urlParams.id].name}
-            </>
+            props.chatbotData[urlParams.id].name
           )}
         </Typography>
 
@@ -40,7 +36,7 @@ export default function ChatbotPage(props) {
           </div>
         ) : (
           <Stack direction="row" spacing={1}>
-            {props.chatbotData[urlParams.id].tags.split(", ").map((tag) => <Chip label={tag} />)}
+            {props.chatbotData[urlParams.id].tags.split(", ").map((tag) => <Chip label={tag} key={tag}/>)}
           </Stack>
         )}
 
@@ -52,6 +48,28 @@ export default function ChatbotPage(props) {
           </div>
         ) : (
           <Typography variant="body1">{props.chatbotData[urlParams.id].description}</Typography>
+        )}
+
+        <br />
+
+        <Typography variant="h6" color="text.secondary">
+          {!props.isLoaded ? (
+            <Skeleton width={120} />
+          ) : (
+            "Read more:"
+          )}
+        </Typography>
+
+        {!props.isLoaded ? (
+          <div>
+            <Skeleton />
+            <Skeleton />
+            <Skeleton width="60%" />
+          </div>
+        ) : (
+          <ul>
+            {props.chatbotData[urlParams.id].links.split(", ").map((link) => <li><Link href={link} key={link} target="_blank" rel="noopener">{link}</Link></li>)}
+          </ul>
         )}
 
       </div>
