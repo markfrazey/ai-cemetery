@@ -56,10 +56,6 @@ function App() {
             <Route index element={<Home chatbotData={chatbotData} isLoaded={isLoaded} />} />
             <Route path="blog" element={<Blog />} />
             <Route path="cemetery" element={<Cemetery chatbotData={chatbotData} isLoaded={isLoaded} />} />
-<<<<<<< HEAD
-            <Route path="News" element={<News chatbotData={chatbotData} isLoaded={isLoaded} />} />
-=======
->>>>>>> 092036e (deleted news)
             <Route path="about" element={<About />} />
             <Route path="chatbots/:id" element={<ChatbotPage chatbotData={chatbotData} isLoaded={isLoaded} />} />
           </Route>
