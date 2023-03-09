@@ -51,7 +51,7 @@ export default function About() {
       <Grid2>
         <Avatar
           alt="Brandon Mendoza"
-          src={brandonImage}
+          src={brandonImage} 
           sx={{ width: 200, height: 200 }}
         />
         <Typography variant="h5">Brandon Mendoza</Typography>
