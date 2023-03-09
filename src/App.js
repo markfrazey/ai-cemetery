@@ -20,6 +20,10 @@ const darkTheme = createTheme({
     },
   },
   typography: {
+    h4: {
+      fontWeight: 700,
+      marginTop: "0.67em"
+    },
     fontFamily: '"Merriweather", "Montserrat", "Helvetica", "Arial", sans-serif',
     a: '"Merriweather", "Helvetica", "Arial", sans-serif',
     body2: '"Montserrat", "Helvetica", "Arial", sans-serif',
@@ -27,20 +31,20 @@ const darkTheme = createTheme({
 });
 
 function App() {
-  const db = getDatabase();
-  const chatbotsRef = ref(db, "chatbots");
   const [isLoaded, updateIsLoaded] = useState(false);
   const [chatbotData, updateChatbotData] = useState({});
 
   useEffect(() => {
-      get(chatbotsRef).then((snapshot) => {
-        if (snapshot.exists()) {
-          updateIsLoaded(true);
-          updateChatbotData(snapshot.val());
-        } else {
-          console.log("No data available");
-        }
-      });
+    const db = getDatabase();
+    const chatbotsRef = ref(db, "chatbots");
+    get(chatbotsRef).then((snapshot) => {
+      if (snapshot.exists()) {
+        updateIsLoaded(true);
+        updateChatbotData(snapshot.val());
+      } else {
+        console.log("No data available");
+      }
+    });
   }, []);
 
   return (
@@ -48,8 +52,8 @@ function App() {
       <ThemeProvider theme={darkTheme}>
         <CssBaseline />
         <Routes>
-          <Route path="/" element={<Layout chatbotData={chatbotData} isLoaded={isLoaded} />}>
-            <Route index element={<Home />} />
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home chatbotData={chatbotData} isLoaded={isLoaded} />} />
             <Route path="blog" element={<Blog />} />
             <Route path="cemetery" element={<Cemetery chatbotData={chatbotData} isLoaded={isLoaded} />} />
             <Route path="about" element={<About />} />

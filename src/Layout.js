@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Outlet, Link as RouterLink, useNavigate } from 'react-router-dom';
+import { Outlet, Link as RouterLink } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -7,8 +7,6 @@ import Link from '@mui/material/Link';
 import Container from '@mui/material/Container';
 import SvgIcon from '@mui/material/SvgIcon';
 import { ReactComponent as CemeteryLogo } from './logo.svg';
-import Fade from '@mui/material/Fade';
-
 export default function Layout() {
   return (
     <>
@@ -23,7 +21,15 @@ export default function Layout() {
             <CemeteryLogo />
           </SvgIcon>
           <Typography variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
-            Chatbot Cemetery
+            <Link
+                component={RouterLink}
+                variant="inherit"
+                underline="hover"
+                color="text.primary"
+                to="/"
+              >
+                Chatbot Cemetery
+              </Link>
           </Typography>
           <nav>
             <Link

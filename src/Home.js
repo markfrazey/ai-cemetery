@@ -3,14 +3,28 @@ import Timeline from '@mui/lab/Timeline';
 import TimelineItem from '@mui/lab/TimelineItem';
 import TimelineSeparator from '@mui/lab/TimelineSeparator';
 import TimelineConnector from '@mui/lab/TimelineConnector';
-import TimelineContent, { timelineContentClasses } from '@mui/lab/TimelineContent';import TimelineDot from '@mui/lab/TimelineDot';
+import TimelineContent, { timelineContentClasses } from '@mui/lab/TimelineContent';
+import TimelineDot from '@mui/lab/TimelineDot';
 import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
-import ChatbotCard from './ChatbotCard';
-import Slide from '@mui/material/Slide';
 import Fade from '@mui/material/Fade';
 import PageHeader from './PageHeader';
+import Grid from '@mui/material/Unstable_Grid2';
+import ChatbotCard, { ChatbotCardLoading } from './ChatbotCard';
+import { useNavigate } from 'react-router-dom';
 
-export default function Home() {
+export default function Home(props) {
+  const navigate = useNavigate();
+  const [slideOut, setSlideOut] = React.useState(true);
+  const [navPath, setNavPath] = React.useState("");
+
+  const handleNavigate = () => {
+    navigate(navPath);
+  };
+
+  const handleTransition = (path) => {
+    setNavPath(path);
+    setSlideOut(false);
+  };
   return (
     <>
       <PageHeader text="Home" in={true}/>
@@ -22,6 +36,9 @@ export default function Home() {
         }} position="left">
           <TimelineItem>
             <TimelineOppositeContent>
+            {props.isLoaded && Object.values(props.chatbotData).map(currChatbotData =>
+                <ChatbotCard data={currChatbotData} handleClick={handleTransition}></ChatbotCard>)
+            }
             </TimelineOppositeContent>
             <TimelineSeparator><TimelineDot /><TimelineConnector sx={{height:240}} /></TimelineSeparator>
             <TimelineContent color="text.secondary">2016</TimelineContent>
