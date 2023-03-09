@@ -1,4 +1,5 @@
-import { Outlet, Link as RouterLink } from 'react-router-dom';
+import * as React from 'react';
+import { Outlet, Link as RouterLink, useNavigate } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -6,6 +7,7 @@ import Link from '@mui/material/Link';
 import Container from '@mui/material/Container';
 import SvgIcon from '@mui/material/SvgIcon';
 import { ReactComponent as CemeteryLogo } from './logo.svg';
+import Fade from '@mui/material/Fade';
 
 export default function Layout() {
   return (

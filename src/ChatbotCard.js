@@ -2,25 +2,45 @@ import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-import { Button, CardActionArea, CardActions, Stack, Chip } from '@mui/material';
+import { Button, CardActionArea, CardActions, Stack, Chip, Slide, Skeleton } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
+
+export function ChatbotCardLoading() {
+  return (
+    <Card sx={{ height: 260 }}>
+      <CardContent>
+        <Skeleton width={80} />
+        <Skeleton width={120} height={40} />
+        <Skeleton width={60} />
+        <Skeleton width={120} />
+        <Skeleton />
+        <Skeleton />
+        <Skeleton width={400}/>
+      </CardContent>
+    </Card>
+  );
+}
 
 export default function ChatbotCard(props) {
+  const handleClick = () => {
+    props.handleClick("/chatbots/" + props.data.id);
+  }
+
   return (
-    <Card>
-      <CardActionArea>
-        <CardContent>
-          <Typography sx={{ fontSize: 14 }} color="text.secondary">{props.data.start_date} - {props.data.end_date}</Typography>
-          <Typography variant="h5" component="div">{props.data.name}</Typography>
-          <Typography color="text.secondary">{props.data.creator}</Typography>
-          <Stack direction="row" spacing={1}>
-            {props.data.tags.map((tag) => <Chip label={tag} />)}
-          </Stack>
-          <Typography sx={{ fontSize: 14 }}  variant="body1">{props.data.description}</Typography>
-        </CardContent>
-        <CardActions>
-          <Button size="medium">Read More</Button>
-        </CardActions>
-      </CardActionArea>
-    </Card>
+    // <Slide direction="up" in={checked} mountOnEnter unmountOnExit>
+      <Card>
+        <CardActionArea onClick={(handleClick)} sx={{ height: 260 }}>
+          <CardContent>
+            <Typography sx={{ fontSize: 14 }} color="text.secondary">{props.data.start_date} - {props.data.end_date}</Typography>
+            <Typography variant="h5" component="div">{props.data.name}</Typography>
+            <Typography color="text.secondary">{props.data.creator}</Typography>
+            <Stack direction="row" spacing={1}>
+              {props.data.tags.split(", ").map((tag) => <Chip label={tag} />)}
+            </Stack>
+            <Typography sx={{ fontSize: 14 }}  variant="body1">{props.data.description}</Typography>
+          </CardContent>
+        </CardActionArea>
+      </Card>
+    // </Slide>
   );
 }
