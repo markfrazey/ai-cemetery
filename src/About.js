@@ -2,14 +2,9 @@ import markImage from './img/Mark.jpg';
 import nilaImage from './img/Nila.jpg';
 import minsuhImage from './img/Minsuh.jpg';
 import brandonImage from './img/Brandon.jpeg';
-<<<<<<< HEAD
-=======
-import Avatar from '@mui/material/Avatar';
-import Stack from '@mui/material/Stack';
-import Grid2 from '@mui/material/Unstable_Grid2'; // Grid version 2
+import Grid2 from '@mui/material/Unstable_Grid2/Grid2';
 import { Typography } from '@mui/material';
-
->>>>>>> 17f294a (Added Meet the Team)
+import Avatar from '@mui/material/Avatar';
 
 export default function About() {
 
