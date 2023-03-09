@@ -1,7 +1,8 @@
-export default function About() {
+export default function News() {
 
     return (
      <>
+     <p>hello</p>
      </>
     );
   }
