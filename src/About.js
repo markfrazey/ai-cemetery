@@ -8,25 +8,6 @@ import Avatar from '@mui/material/Avatar';
 
 export default function About() {
 
-  let teamMembers = [
-    {
-      name: 'Mark Frazey',
-      image: markImage
-    },
-    {
-      name: 'Nila Ragu',
-      image: nilaImage
-    },
-    {
-      name: 'Minsuh Kim',
-      image: minsuhImage
-    },
-    {
-      name: 'Brandon Mendoza',
-      image: brandonImage
-    }
-  ];
-
   return (
     <>
       <h1>About</h1>
