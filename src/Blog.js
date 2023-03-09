@@ -86,6 +86,23 @@ export default function Blog() {
           website, people begin to understand the importance of ethical implementation and
           realize the many harms that can come with the benefits of technological advances.
         </p>
+        <p style={{ textAlign: 'center', fontWeight: 'bold' }}>References</p>
+          <ul>
+            <li>
+              Avoiding garbage in machine learning. S&amp;P Global. (2019, October 16). Retrieved March 7, 2023, from
+              https://www.spglobal.com/en/research-insights/featured/special-editorial/avoiding-garbage-in-machine-learning
+            </li>
+            <p></p>
+            <li>
+              Magalhães, R. (2022, October 6). How to avoid bias in AI Chatbots. Landbot.io. Retrieved March 7, 2023, from
+              https://landbot.io/blog/bias-ai-chatbots
+            </li>
+            <p></p>
+            <li>
+              Ogden, C. (n.d.). Killed by Google. Killed by Google: Google Graveyard. Retrieved February 20, 2023, from
+              https://killedbygoogle.com/
+            </li>
+          </ul>
       </div>
     </Fade>
   );
